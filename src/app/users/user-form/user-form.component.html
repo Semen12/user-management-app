@@ -1,0 +1,35 @@
+<form nz-form [formGroup]="form" (ngSubmit)="submit()" >
+    <nz-form-item>
+      <nz-form-label [nzSpan]="4" nzRequired>Имя</nz-form-label>
+      <nz-form-control [nzSpan]="8" nzErrorTip="Введите имя">
+        <input nz-input formControlName="name" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="4" nzRequired>Email</nz-form-label>
+      <nz-form-control [nzSpan]="8" nzErrorTip="Неверный формат email">
+        <input nz-input formControlName="email" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="4" nzRequired>Телефон</nz-form-label>
+      <nz-form-control [nzSpan]="8" nzErrorTip="Введите телефон">
+        <input nz-input formControlName="phone" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-control [nzOffset]="4" [nzSpan]="8">
+        <button nz-button nzType="primary" [disabled]="form.invalid">
+          {{ isEdit ? 'Обновить' : 'Создать' }}
+        </button>
+        <button nz-button (click)="cancel()" style="margin-left: 8px;">
+          Отмена
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+  

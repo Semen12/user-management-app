@@ -1,59 +1,55 @@
-# UserManagementApp
+# User Management App — Angular + Ng-Zorro
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+Приложение для управления пользователями. Реализовано с использованием Angular Standalone API, Ng-Zorro UI и реактивных форм. 
 
-## Development server
+##  Возможности
 
-To start a local development server, run:
+* Список пользователей с пагинацией и фильтром
+* Создание / редактирование пользователя
+* Валидация форм с Reactive Forms
+* Подтверждение удаления
+* Отображение деталей пользователя
+* Юнит-тесты для компонентов и сервисов (Karma + Jasmine). Реализованы не все тесты.
+
+##  Технологии
+
+* Angular 17+
+* Standalone Components API
+* Ng-Zorro UI Kit
+* TypeScript
+* Karma + Jasmine
+
+## 🚀 Запуск приложения
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+По умолчанию открывается [http://localhost:4200](http://localhost:4200)
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🎓 Запуск тестов
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+## 📄 Структура
 
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── users/
+│   │   ├── user-list/
+│   │   ├── user-form/
+│   │   └── user-detail/
+│   ├── services/user.service.ts
+│   ├── app.component.ts
+│   └── app.routes.ts
+    └── ...
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 👤 Автор
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Автор: Семён Кондауров, Frontent-developer*

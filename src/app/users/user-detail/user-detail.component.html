@@ -1,0 +1,20 @@
+<div *ngIf="user; else noData">
+    <h2>Пользователь {{ user.name }}</h2>
+    <p><b>Email:</b> {{ user.email }}</p>
+    <p><b>Телефон:</b> {{ user.phone }}</p>
+  
+    <button nz-button nzType="default" [routerLink]="['/users']" style="margin: 10px;">
+      ← Назад к списку
+    </button>
+    <button nz-button nzType="primary" [routerLink]="['/users', user.id, 'edit']">
+      Редактировать
+    </button>
+  </div>
+  
+  <ng-template #noData>
+    <nz-spin nzSize="large">Загрузка...</nz-spin>
+    <button nz-button nzType="default" [routerLink]="['/users']">
+      ← Назад к списку
+    </button>
+  </ng-template>
+  

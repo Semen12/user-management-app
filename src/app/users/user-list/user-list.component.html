@@ -1,0 +1,41 @@
+<nz-input-group [nzSuffix]="searchTpl">
+  <input type="text" nz-input placeholder="Поиск по имени или email" [(ngModel)]="searchValue"
+    (ngModelChange)="applyFilter()" />
+</nz-input-group>
+<ng-template #searchTpl>
+  <i nz-icon nzType="search"></i>
+</ng-template>
+
+<nz-table #basicTable [nzData]="filteredUsers.slice((pageIndex-1)*pageSize, pageIndex*pageSize)"
+  [nzFrontPagination]="false">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Email</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of basicTable.data">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button nz-button  [routerLink]="['/users', user.id]">Подробнее</button>
+        <button nz-button  [routerLink]="['/users', user.id, 'edit']"
+          style="margin:  10px;">Изменить</button>
+          
+          <button nz-button nz-popconfirm  nzDanger nzType="dashed"
+          nzPopconfirmTitle="Вы уверены что хотите удалить пользователя?"
+          (nzOnConfirm)="deleteUser(user.id)"
+          >
+            Удалить <nz-icon nzType="user-delete" nzTheme="outline" />
+          </button>
+       
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<nz-pagination [nzPageIndex]="pageIndex" [nzPageSize]="pageSize" [nzTotal]="filteredUsers.length"
+  (nzPageIndexChange)="onPageIndexChange($event)">
+</nz-pagination>
