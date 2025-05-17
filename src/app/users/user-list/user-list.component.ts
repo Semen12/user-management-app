@@ -25,8 +25,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzIconModule,
     NzPopconfirmModule,
     NzButtonModule,
-    
-   
+  
   ],
 })
 export class UserListComponent implements OnInit {
